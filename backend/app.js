@@ -9,6 +9,8 @@ const csurf = require('csurf')
 
 const debug = require('debug')
 
+require('./models/User')
+
 var usersRouter = require('./routes/api/users');
 const tweetsRouter = require('./routes/api/tweets');
 const csrfRouter = require('./routes/api/csrf');
@@ -34,6 +36,7 @@ app.use(
       }
     })
 );
+
 
 app.use('/api/users', usersRouter);
 app.use('/api/tweets', tweetsRouter)
